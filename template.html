@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文件索引 - {{path}}</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica Neue,sans-serif;background:#f5f7fb;color:#1e293b;padding:2rem 1rem;line-height:1.5}
+        .container{max-width:1200px;margin:0 auto}
+        .header{margin-bottom:2rem}
+        h1{font-size:1.8rem;font-weight:600;background:linear-gradient(135deg,#2563eb,#7c3aed);background-clip:text;-webkit-background-clip:text;color:transparent;margin-bottom:0.5rem}
+        .breadcrumb{background:white;padding:0.75rem 1rem;border-radius:1rem;box-shadow:0 1px 2px rgba(0,0,0,0.05);font-size:0.9rem;word-break:break-all;margin-top:0.5rem}
+        .breadcrumb a{color:#2563eb;text-decoration:none}
+        .breadcrumb a:hover{text-decoration:underline}
+        .file-list{background:white;border-radius:1.5rem;box-shadow:0 4px 6px -1px rgba(0,0,0,0.1);overflow:hidden}
+        .file-item{display:flex;align-items:center;padding:0.75rem 1rem;border-bottom:1px solid #e2e8f0;transition:background 0.2s}
+        .file-item:hover{background:#f8fafc}
+        .file-icon{width:2rem;font-size:1.4rem;margin-right:0.75rem;text-align:center}
+        .file-name{flex:1;font-weight:500;word-break:break-all}
+        .file-name a{color:#1e293b;text-decoration:none}
+        .file-name a:hover{color:#2563eb;text-decoration:underline}
+        .file-size{font-size:0.8rem;color:#64748b;margin-left:1rem;white-space:nowrap}
+        @media (max-width:640px){.file-size{display:none}.file-icon{width:1.8rem;font-size:1.2rem}.file-item{padding:0.6rem 0.8rem}}
+        .footer{margin-top:2rem;text-align:center;font-size:0.8rem;color:#94a3b8}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>📁 文件浏览器</h1>
+        <div class="breadcrumb">📍 {{breadcrumb}}</div>
+    </div>
+    <div class="file-list">
+        {{file_list_html}}
+    </div>
+    <div class="footer">Powered by Python HTTP Server</div>
+</div>
+</body>
+</html>
